@@ -130,10 +130,10 @@ int main(void)
     //若GPIOE_GPIO_PIN_13占空比为30%，则GPIOE_GPIO_PIN_14占空比为70%的
     //串口输入规则：连续两个8位的输入，第一个数为频率（Hz），第二个数为占空比（%）
     //temp[5] = HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_13) + '0';
-
+    //HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_14));
     temp[5] = HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_14) + '0';
+    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_14));
     HAL_UART_Transmit(&huart1, temp, 9, 100);
-    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1));
 
     HAL_TIM_PWM_Start_DMA(&htim1, TIM_CHANNEL_3,(uint32_t *) &send_Buf, 1);
     HAL_TIM_PWM_Start_DMA(&htim1, TIM_CHANNEL_4,(uint32_t *) &send_Buf, 1);
