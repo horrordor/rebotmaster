@@ -42,7 +42,7 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-#define BUF_SIZE 100
+
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
@@ -59,7 +59,7 @@ void Error_Handler(void);
 
 /* Private defines -----------------------------------------------------------*/
 /* USER CODE BEGIN Private defines */
-
+#define BUF_SIZE 100
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
